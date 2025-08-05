@@ -42,7 +42,7 @@ export const fetchNoteById = async (id: string) => {
   return res.data;
 };
 
-export const deleteNote = async (noteId: number) => {
+export const deleteNote = async (noteId: string) => {
   const response = await axios.delete<Note>(`/notes/${noteId}`);
   return response.data;
 };
