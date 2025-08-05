@@ -20,10 +20,10 @@ export const fetchNotes = async (
   search: string,
   page: number = 1,
   perPage: number = 12
-): Promise<FetchNotesProps> => {
+) => {
   const config = {
     params: {
-      ...(search ? { search } : {}),
+      search,
       page,
       perPage,
     },
@@ -35,6 +35,11 @@ export const fetchNotes = async (
 export const createNote = async (noteData: NewNoteData) => {
   const response = await axios.post<Note>(`/notes`, noteData);
   return response.data;
+};
+
+export const fetchNoteById = async (id: string) => {
+  const res = await axios.get<Note>(`/notes/${id}`);
+  return res.data;
 };
 
 export const deleteNote = async (noteId: number) => {
