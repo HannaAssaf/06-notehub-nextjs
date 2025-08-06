@@ -10,13 +10,8 @@ import css from "./page.module.css";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { fetchNotes } from "@/app/lib/api";
 import { useDebouncedCallback } from "use-debounce";
-import { Note } from "../../types/note";
 
-interface NoteClientProps {
-  notes: Note[];
-}
-
-function NotesClient({ notes }: NoteClientProps) {
+function NotesClient() {
   const [page, setPage] = useState<number>(1);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
