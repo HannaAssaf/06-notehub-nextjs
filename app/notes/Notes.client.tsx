@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import NoteList from "@/components/NoteList/NoteList";
 import Pagination from "@/components/Pagination/Pagination";
-import NoteModal from "../../components/NoteModal/NoteModal";
+import Modal from "../../components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./page.module.css";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { fetchNotes } from "@/app/lib/api";
+import { fetchNotes } from "../../lib/api";
 import { useDebouncedCallback } from "use-debounce";
 
 function NotesClient() {
@@ -49,9 +49,9 @@ function NotesClient() {
         </div>
         {data && <NoteList notes={data.notes} />}
         {isModalOpen && (
-          <NoteModal onClose={closeModal}>
+          <Modal onClose={closeModal}>
             <NoteForm onCloseModal={closeModal} />
-          </NoteModal>
+          </Modal>
         )}
       </div>
     </>
