@@ -1,7 +1,7 @@
 import css from "./Header.module.css";
 import Link from "next/link";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className={css.header}>
       <a href="/" aria-label="Home">
@@ -23,6 +23,4 @@ const Header = () => {
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

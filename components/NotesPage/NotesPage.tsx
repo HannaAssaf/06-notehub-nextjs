@@ -5,7 +5,7 @@ type Props = {
   item: Note;
 };
 
-const NoteItem = ({ item }: Props) => {
+const NotesPage = ({ item }: Props) => {
   return (
     <li>
       <Link href={`/notes/${item.id}`}>{item.title}</Link>
@@ -13,4 +13,4 @@ const NoteItem = ({ item }: Props) => {
   );
 };
 
-export default NoteItem;
+export default NotesPage;

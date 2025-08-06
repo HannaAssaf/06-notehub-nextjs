@@ -17,7 +17,7 @@ export interface NewNoteData {
   tag: NoteTag;
 }
 export const fetchNotes = async (
-  search: string,
+  search: string = "",
   page: number = 1,
   perPage: number = 12
 ) => {

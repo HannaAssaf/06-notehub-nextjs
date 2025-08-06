@@ -20,7 +20,6 @@ export default function Home() {
           </p>
         </div>
       </main>
-      <footer className={css.footer}></footer>
     </div>
   );
 }

@@ -2,7 +2,6 @@
 
 type Props = {
   error: Error;
-  reset: () => void;
 };
 
 const Error = ({ error }: Props) => {

@@ -1,10 +1,9 @@
 "use client";
 
-import css from "./NoteDetails.module.css";
-import React from "react";
+import css from "./NoteDetails.client.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
-import { fetchNoteById } from "../lib/api";
+import { fetchNoteById } from "../../lib/api";
 
 const NoteDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,10 +21,6 @@ const NoteDetailsClient = () => {
   if (isLoading) return <p>Loading, please wait...</p>;
 
   if (error || !note) return <p>Something went wrong.</p>;
-
-  //   const formattedDate = note.updatedAt
-  //     ? `Updated at: ${note.updatedAt}`
-  //     : `Created at: ${note.createdAt}`;
 
   return (
     <div className={css.container}>
