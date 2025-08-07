@@ -1,5 +1,3 @@
-"use client";
-
 import css from "./NoteList.module.css";
 import Link from "next/link";
 import type { Note } from "../../types/note";
