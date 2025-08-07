@@ -9,10 +9,6 @@ export interface NoteListProps {
 }
 
 export default function NoteList({ notes }: NoteListProps) {
-  if (!notes || notes.length === 0) {
-    return null;
-  }
-
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
@@ -21,6 +17,10 @@ export default function NoteList({ notes }: NoteListProps) {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
     },
   });
+
+  if (!notes || notes.length === 0) {
+    return null;
+  }
 
   return (
     <ul className={css.list}>
